@@ -102,8 +102,10 @@ curl -X POST http://localhost:3000/books \
 
 ### Executar testes
 
+No repositório backend, executador o comando:
+
 ```bash
-npm run test
+yarn test
 ```
 
 ---
