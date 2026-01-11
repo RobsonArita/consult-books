@@ -8,7 +8,10 @@ import { notFound } from './middlewares/notFound'
 
 const server = express()
 server.use(cors())
-server.use(express.json())
+server.use(express.json({ limit: '10mb' }))
+server.use(express.urlencoded({ extended: true, limit: '10mb' }))
+
+server.use('/files', express.static(globals.UPLOADS_FOLDER))
 
 server.get('/health', (req, res) => {
   return res.status(200).json({ status: 'OK' })
@@ -18,7 +21,7 @@ server.use('/', routes)
 server.use(notFound)
 server.use(errorHandler)
 
-const PORT = globals.PORT || 3000
+const PORT = globals.PORT
 
 const waitForMongo = async (retries = 10, delay = 3000) => {
   for (let i = 0; i < retries; i++) {

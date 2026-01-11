@@ -1,0 +1,35 @@
+.delete-modal {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  width: 360px;
+  text-align: center;
+}
+
+.delete-modal h3 {
+  margin-bottom: 12px;
+}
+
+.delete-modal p {
+  font-size: 14px;
+  color: #555;
+}
+
+.delete-modal footer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.delete-modal button {
+  border: none;
+  padding: 10px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.delete-modal .danger {
+  background: #d00000;
+  color: #fff;
+}

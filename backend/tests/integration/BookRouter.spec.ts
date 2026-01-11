@@ -106,7 +106,7 @@ describe('BookController CRUD', () => {
     } as unknown as Response
 
     await bookController.delete(req, res, jest.fn())
-    expect(res.status).toHaveBeenCalledWith(204)
+    expect(res.status).toHaveBeenCalledWith(200)
 
     const getReq = { params: { id: bookId } } as unknown as Request
     const getRes = {

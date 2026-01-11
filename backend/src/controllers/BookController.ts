@@ -1,6 +1,9 @@
 import { NextFunction, Request, Response } from 'express'
 import { BookRepository } from '../repositories/BookRepository'
 import { BookService } from '../services/BookService'
+import { CreateBookDTO, UpdateBookDTO } from '../types/BookDTO'
+import { deleteFileByUrl } from '../config/upload'
+import { globals } from '../config/globals'
 
 export class BookController {
   private readonly bookService: BookService
@@ -11,9 +14,20 @@ export class BookController {
 
   create = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const book = await this.bookService.create(req.body)
+      const file = req.file
+
+      const dto: CreateBookDTO = {
+        author: req.body?.author,
+        title: req.body?.title,
+        description: req.body?.description,
+        publishedDate: req.body?.publishedDate,
+        image: file ? `${globals.URL}/files/${file.filename}` : ''
+      }
+
+      const book = await this.bookService.create(dto)
       return res.status(201).json(book.toJSON())
     } catch (err) {
+      if (req.file?.filename) deleteFileByUrl(`/files/${req.file.filename}`)
       next(err)
     }
   }
@@ -41,8 +55,21 @@ export class BookController {
   update = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const id = req.params?.id?.toString()
-      const data = req.body
-      const updatedBook = await this.bookService.update(id, data)
+
+      const file = req.file
+
+      const dto: UpdateBookDTO = {
+        author: req.body?.author,
+        title: req.body?.title,
+        description: req.body?.description,
+        publishedDate: req.body?.publishedDate
+      }
+
+      if (file) {
+        dto.image = `${globals.URL}/files/${file.filename}`
+      }
+
+      const updatedBook = await this.bookService.update(id, dto)
       return res.status(200).json(updatedBook)
     } catch (err) {
       next(err)
@@ -53,7 +80,7 @@ export class BookController {
     try {
       const id = req.params?.id?.toString()
       await this.bookService.delete(id)
-      return res.status(204).send()
+      return res.status(200).json({ message: 'Book deleted successfully' })
     } catch (err) {
       next(err)
     }
