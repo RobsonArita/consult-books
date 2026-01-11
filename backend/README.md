@@ -1,23 +1,5 @@
 # 📚 API Consulta de Livros
 
-API REST para cadastro, consulta, atualização e remoção de livros. Cada livro possui informações básicas como autor, título, descrição, data de publicação e também uma imagem associada enviada via upload.
-
-A aplicação foi desenvolvida com foco em organização de código, separação de responsabilidades, testes automatizados e facilidade de execução utilizando Docker. As imagens enviadas são armazenadas no sistema de arquivos do backend e o caminho da imagem é persistido no banco de dados.
-
----
-
-## 🛠️ Tecnologias
-
-* Node.js
-* TypeScript
-* Express
-* MongoDB + Mongoose
-* Multer (upload de arquivos)
-* Docker / Docker Compose
-* Jest + Supertest (testes)
-
----
-
 ## 📦 Estrutura do Projeto
 
 ```

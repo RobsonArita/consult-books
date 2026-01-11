@@ -26,10 +26,10 @@ Toda a aplicação pode ser executada utilizando Docker e Docker Compose, sem ne
 - Node.js
 - TypeScript
 - Express
-- MongoDB
-- Mongoose
-- Docker
-
+- MongoDB + Mongoose
+- Multer (upload de arquivos)
+- Docker / Docker Compose
+- Jest + Supertest (testes)
 ### Frontend
 - React
 - Vite
