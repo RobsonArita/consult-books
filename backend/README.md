@@ -111,7 +111,7 @@ yarn test
 ---
 
 
-## ⚠️ Observações
+## ⚠️ Observações do Upload de Imagem
 
 * Apenas um arquivo é aceito por requisição (`file`)
 * Enviar campo de arquivo com nome diferente resultará em erro do Multer
