@@ -1,0 +1,22 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: consulta-livros-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: consulta-livros-backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env.docker
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

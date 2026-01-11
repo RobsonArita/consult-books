@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down",
+    "docker:reset": "docker compose down -v",
+    "dev": "docker compose up mongo -d && cd backend && yarn dev"
+  }
+}
