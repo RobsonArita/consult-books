@@ -80,7 +80,7 @@ cd consulta-livros
 
 ### 2. Configuração de variáveis de ambiente
 
-No diretório `backend`, existe um arquivo `.env.docker` contendo as variáveis necessárias para execução da aplicação em Docker.
+No diretório `backend`, deve ser criado um arquivo `.env.docker` contendo as variáveis necessárias para execução da aplicação em Docker.
 
 Exemplo:
 
@@ -91,7 +91,7 @@ MONGO_URI_TEST=mongodb://mongo:27017/consulta-livros-test
 IP=localhost
 ```
 
-No diretório `frontend`, existe um arquivo `.env.docker` contendo as variáveis necessárias para execução da aplicação em Docker.
+No diretório `frontend`, deve ser criado um arquivo `.env.docker` contendo as variáveis necessárias para execução da aplicação em Docker.
 ```
 VITE_API_URL=http://localhost:3000
 ```
