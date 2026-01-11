@@ -13,7 +13,6 @@ backend/
  │  ├─ routes/
  │  ├─ middlewares/
  │  └─ server.ts
- ├─ uploads/
  ├─ tests/
  ├─ Dockerfile
  └─ package.json
