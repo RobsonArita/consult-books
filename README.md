@@ -18,6 +18,8 @@ A aplicação foi projetada com foco em:
 
 Toda a aplicação pode ser executada utilizando Docker e Docker Compose, sem necessidade de instalar dependências manualmente na máquina local.
 
+Para mais detalhes da API, consulte o [README](https://github.com/RobsonArita/consult-books/blob/main/backend/README.md) do backend.
+
 ---
 
 ## Tecnologias Utilizadas
