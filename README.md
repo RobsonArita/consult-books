@@ -88,7 +88,7 @@ Exemplo:
 PORT=3000
 MONGO_URI=mongodb://mongo:27017/consulta-livros
 MONGO_URI_TEST=mongodb://mongo:27017/consulta-livros-test
-IP=
+IP=localhost
 ```
 
 No diretório `frontend`, existe um arquivo `.env.docker` contendo as variáveis necessárias para execução da aplicação em Docker.
